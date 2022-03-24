@@ -101,20 +101,54 @@ li {
 .center { text-align: center; }
 .bold { font-weight: bold; }
 .transition { transition: 1s all ease; }
+body{ background-color:#1F1F1F ;}
 
 /*for wrapper*/
 .wrapper {
   max-width: 1350px;
-  width: 86%; 
+  width: 75%; 
   margin: 0 auto;
 }
 /*=================================
   Header styling starts here
 =================================*/
 
+header .wrapper {
+  padding: 40px 0 36px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #282828;
+}
 
+.logo{ 
+  color: #FFF;
+  font-size: 35px;
+  font-weight: 700;
+}
 
+.hamburger { display: none; }
 
+nav {
+  flex-basis: 42.5%;
+}
+
+.nav-links {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links li a {
+  color: #909090;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links li a:hover,
+.logo:hover { 
+  color: #8FD0A6;
+}
 
 
 /*=================================
