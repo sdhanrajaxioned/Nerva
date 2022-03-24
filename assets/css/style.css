@@ -153,10 +153,29 @@ nav { flex-basis: 42.5%; }
 /*=================================
   main styling starts here
 =================================*/
-.tabs { padding-top: 13px; }
+.tabs { padding-top: 28px; }
+.tabs .wrapper { border-bottom: 1px solid #282828; }
+.tab-buttons {
+  display: flex;
+  margin-bottom: 25px;
+}
 
+.tab-buttons li a{
+  padding: 5px 10px;
+  color: #B2B2B2;
+  font-size: 12px;
+}
 
+.tab-buttons li a.active {
+  background-color: #8FD0A6;
+  color: #FFF;
+}
 
+.tab-images {
+  padding-bottom: 35px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 
