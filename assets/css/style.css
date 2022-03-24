@@ -227,7 +227,10 @@ h3 {
   font-size: 11px;
 }
 
-.popular-tags li a.coding { background-color: #C1C1C1;}
+.popular-tags li a.coding { 
+  margin-right: 30px;
+  background-color: #C1C1C1;
+}
 
 .flickr-gallery {
   display: flex;
