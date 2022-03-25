@@ -7,16 +7,16 @@ $(document).ready(function () {
 
 
     $('.list').click(function () {
+        console.log(this)
         var value = $(this).attr('data-filter');
-        if (value === 'all') {
-            $('.image').show('1000');
-        } else {
-            $('.image').filter('.' + value).show('1000');
-            $('.image').not('.' + value).hide('1000');
-        }
-    })
 
-    $('.list').click(function () {
+        if (value === 'all') {
+            $('.tab-image').show('1000');
+        } else {
+            $('.tab-image').hide('1000');
+            $('.tab-image[data-img-filter=' + value + ']').show('1000');
+        }
+
         $(this).addClass('active').siblings().removeClass('active').children().css("color", "#FFF");
     })
 })
