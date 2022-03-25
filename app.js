@@ -1,13 +1,11 @@
 $(document).ready(function () {
     $('.hamburger').click(function () {
-        $(this).toggleClass('activ').animate()
+        $(this).toggleClass('activ')
         $('nav').toggleClass('active');
         $('body').toggleClass('hidden')
     })
 
-
     $('.list').click(function () {
-        console.log(this)
         var value = $(this).attr('data-filter');
 
         if (value === 'all') {
