@@ -6,14 +6,21 @@ $(document).ready(function () {
     })
 
     $('.list').click(function () {
-        var value = $(this).attr('data-filter');
-
-        if (value === 'all') {
-            $('.tab-image').show('1000');
-        } else {
-            $('.tab-image').hide('1000');
-            $('.tab-image[data-img-filter=' + value + ']').show('1000');
-        }
+        var $buttonData = $(this).data('filter');
+        $images = $('.tab-images .tab-image');
+        $images.each(function () {
+            var $imgData = $(this).data('img-filter')
+            console.log(this);
+            var $img = this;
+            console.log($img)
+            if ($buttonData === 'all') {
+                $($img).show('500');
+            } else if ($buttonData === $imgData) {
+                $($img).show('500');
+            } else {
+                $($img).hide('500');
+            }
+        })
 
         $(this).addClass('active').siblings().removeClass('active');
     })
