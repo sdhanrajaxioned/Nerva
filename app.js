@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.hamburger').click(function () {
-        $(this).toggleClass('active')
+        $(this).toggleClass('activ').animate()
         $('nav').toggleClass('active');
         $('body').toggleClass('hidden')
     })
