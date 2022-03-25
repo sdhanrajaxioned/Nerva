@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    $('.hamburger').click(function () {
+        $(this).toggleClass('active')
+        $('nav').toggleClass('active');
+        $('body').toggleClass('hidden')
+    })
+
+
     $('.list').click(function () {
         var value = $(this).attr('data-filter');
         if (value === 'all') {
@@ -13,3 +20,4 @@ $(document).ready(function () {
         $(this).addClass('active').siblings().removeClass('active').children().css("color", "#FFF");
     })
 })
+
