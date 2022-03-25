@@ -5,7 +5,6 @@ $(document).ready(function () {
         $('body').toggleClass('hidden')
     })
 
-
     $('.list').click(function () {
         var value = $(this).attr('data-filter');
 
