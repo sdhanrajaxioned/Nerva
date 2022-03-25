@@ -165,13 +165,14 @@ nav { flex-basis: 42.5%; }
   margin-bottom: 25px;
 }
 
-.tab-buttons li a{
+.list a{
+  margin: 0 5px;
   padding: 5px 10px;
   color: #B2B2B2;
   font-size: 12px;
 }
 
-.tab-buttons li a:first-child { color: #FFF;}
+.list a:first-child { color: #FFF;}
 .active { background-color: #8FD0A6; }
 
 .tab-buttons li a:hover {
