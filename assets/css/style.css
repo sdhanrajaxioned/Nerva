@@ -112,7 +112,6 @@ body{ background-color:#1F1F1F ;}
 /*=================================
   Header styling starts here
 =================================*/
-
 header .wrapper {
   padding: 40px 0 36px;
   display: flex;
@@ -155,6 +154,7 @@ nav { flex-basis: 42.5%; }
 =================================*/
 .tabs { padding-top: 28px; }
 .tabs .wrapper { border-bottom: 1px solid #282828; }
+
 .tab-buttons {
   display: flex;
   margin-bottom: 25px;
@@ -166,10 +166,8 @@ nav { flex-basis: 42.5%; }
   font-size: 12px;
 }
 
-.tab-buttons li a.active {
-  background-color: #8FD0A6;
-  color: #FFF;
-}
+.tab-buttons li a:first-child { color: #FFF;}
+.active { background-color: #8FD0A6; }
 
 .tab-buttons li a:hover {
   background-color: #8FD0A6;
@@ -183,7 +181,6 @@ nav { flex-basis: 42.5%; }
   align-items: center;
   flex-wrap: wrap;
 }
-
 /*=================================
   main styling ends here
 =================================*/
@@ -308,7 +305,6 @@ h3 {
   color: #FFF;
   transition: .4s ease;
 }
-
  /*=================================
   footer styling ends here
 =================================*/ 
