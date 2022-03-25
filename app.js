@@ -7,7 +7,6 @@ $(document).ready(function () {
 
 
     $('.list').click(function () {
-        console.log(this)
         var value = $(this).attr('data-filter');
 
         if (value === 'all') {
