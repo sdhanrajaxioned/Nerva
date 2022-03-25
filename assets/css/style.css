@@ -145,6 +145,11 @@ nav { flex-basis: 42.5%; }
 .logo:hover { 
   color: #8FD0A6;
 }
+
+.active-border {
+  padding-bottom: 12px;
+  border-bottom: 4px solid #8FD0A6;
+}
 /*=================================
   Header styling ends here
 =================================*/  
