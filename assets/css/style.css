@@ -141,9 +141,10 @@ nav { flex-basis: 42.5%; }
   letter-spacing: 2px;
 }
 
-.nav-links li a:hover,
-.logo:hover { 
-  color: #8FD0A6;
+.nav-links li a:hover{
+  padding-bottom: 12px;
+  border-bottom: 4px solid #8FD0A6;
+  color: #8FD0A6; 
 }
 
 .active-border {
@@ -161,8 +162,9 @@ nav { flex-basis: 42.5%; }
 .tabs .wrapper { border-bottom: 1px solid #282828; }
 
 .tab-buttons {
-  display: flex;
   margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .list a{
@@ -172,8 +174,8 @@ nav { flex-basis: 42.5%; }
   font-size: 12px;
 }
 
-.list a:first-child { color: #FFF;}
-.active { background-color: #8FD0A6; }
+.list.active a { color: #FFF;}
+.list.active { background-color: #8FD0A6; }
 
 .tab-buttons li a:hover {
   background-color: #8FD0A6;
@@ -183,10 +185,10 @@ nav { flex-basis: 42.5%; }
 .tab-images {
   padding-bottom: 35px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
+
+.tab-image { flex-basis: 25%; }
 /*=================================
   main styling ends here
 =================================*/
@@ -318,11 +320,6 @@ h3 {
 /*media query starts*/
 /*media query for 995px starts here*/
 @media only screen and (max-width: 1154px) {
-  .tab-buttons {
-    justify-content: center;
-    align-items: center;
-  }
-
   .footer-main {
     flex-wrap: wrap;
     justify-content: center;
@@ -358,6 +355,10 @@ h3 {
     margin-bottom: 10px;
   }
 } 
+
+@media screen and (max-width:1024px) {
+  .tab-image { flex-basis: 33%; }
+}
 
 @media only screen and (max-width: 995px) {
   nav { flex-basis: 55%;}
@@ -410,7 +411,19 @@ h3 {
     padding-bottom: 0;
     border-bottom: none;
   }
-  .tab-buttons { flex-wrap: wrap;}
+
+  .tab-buttons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tab-images {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* .tab-buttons { flex-wrap: wrap;} */
+  .tab-image { flex-basis: 50%; }
   .footer-main { flex-direction: column; }
   h3 { text-align: center;}
   .footer-main p {padding-bottom: 5px;}
@@ -442,7 +455,6 @@ h3 {
   }
 }  
 
-@media only screen and (max-width: 480px) {
-  .wrapper { width: 90%; }
-  .tab-buttons { flex-wrap: wrap; }
-}  
+@media only screen and (max-width: 995px) {
+  .tab-image { flex-basis: 50%;}
+}
