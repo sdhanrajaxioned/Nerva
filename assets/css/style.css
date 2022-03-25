@@ -141,9 +141,10 @@ nav { flex-basis: 42.5%; }
   letter-spacing: 2px;
 }
 
-.nav-links li a:hover,
-.logo:hover { 
-  color: #8FD0A6;
+.nav-links li a:hover{
+  padding-bottom: 12px;
+  border-bottom: 4px solid #8FD0A6;
+  color: #8FD0A6; 
 }
 
 .active-border {
@@ -161,18 +162,20 @@ nav { flex-basis: 42.5%; }
 .tabs .wrapper { border-bottom: 1px solid #282828; }
 
 .tab-buttons {
-  display: flex;
   margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.tab-buttons li a{
+.list a{
+  margin: 0 5px;
   padding: 5px 10px;
   color: #B2B2B2;
   font-size: 12px;
 }
 
-.tab-buttons li a:first-child { color: #FFF;}
-.active { background-color: #8FD0A6; }
+.list.active a { color: #FFF;}
+.list.active { background-color: #8FD0A6; }
 
 .tab-buttons li a:hover {
   background-color: #8FD0A6;
@@ -182,10 +185,10 @@ nav { flex-basis: 42.5%; }
 .tab-images {
   padding-bottom: 35px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
+
+.tab-image { flex-basis: 25%; }
 /*=================================
   main styling ends here
 =================================*/
@@ -201,11 +204,13 @@ h3 {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .footer-main {
   border-bottom: 1px solid #282828;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -216,17 +221,22 @@ h3 {
   line-height: 16px;
 }
 
-.recent-posts p {
+.recent li a{
   padding-bottom: 5px;
   border-bottom: 1px solid #282828;
+  display: block;
+  color: #555;
+  font-size: 11px;
+  line-height: 16px;
 }
 
-.recent-posts p:nth-child(n+3) { padding-top: 5px; }
-
-.recent-posts p:last-child { 
-  padding-bottom: 17px;
-  border-bottom: none; 
+.recent {
+  display: flex;
+  flex-direction: column;
 }
+
+.recent li:last-child a { border-bottom: none;}
+.recent li a:hover { color: #8FD0A6; }
 
 .popular-tags li a {
   padding: 8px 10px;
@@ -236,16 +246,28 @@ h3 {
   font-size: 11px;
 }
 
-.popular-tags li a.coding { 
-  margin-right: 50px;
-  background-color: #C1C1C1;
+.popular-tags li a:hover {
+  background-color: #FFF;
+  color: #8FD0A6;
+  transition: .3s ease-in;
+}
+
+.popular-tags li a.coding { background-color: #C1C1C1; }
+
+.popular-tags li a.coding:hover {
+  background-color: #FFF;
+  color: #C1C1C1;
 }
 
 .flickr-gallery {
+  padding-bottom: 10px;
+  justify-content: end;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.flickr h3 { padding-left: 10%;}
 
 .text-widget,
 .recent-posts,
@@ -289,7 +311,7 @@ h3 {
 .xbox::after,
 .indeed::after,
 .facebook::after  {
-  padding: 5px;
+  padding: 10px;
   margin: 2px;
   border-radius: 50%;
   background-color: #FFF;
@@ -316,12 +338,7 @@ h3 {
 
 /*media query starts*/
 /*media query for 995px starts here*/
-@media only screen and (max-width: 1154px) {
-  .tab-buttons {
-    justify-content: center;
-    align-items: center;
-  }
-
+/* @media only screen and (max-width: 1154px) {
   .footer-main {
     flex-wrap: wrap;
     justify-content: center;
@@ -356,11 +373,31 @@ h3 {
     flex-wrap: wrap;
     margin-bottom: 10px;
   }
-} 
+}  */
+
+@media screen and (max-width:1024px) {
+  .tab-image { flex-basis: 33%; }
+  .footer-main > div { flex-basis: 40%; }
+  .recent-posts { margin-left: 10%; }
+}
 
 @media only screen and (max-width: 995px) {
   nav { flex-basis: 55%;}
-}  
+  .footer-main > div { flex-basis: 100%; }
+  .recent-posts { 
+    margin-left: 0; 
+  }
+  
+  .recent { text-align: center; }
+  .flickr h3 { padding-left: 0;}
+
+  .footer-main {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .wrapper {width: 90%;}
@@ -409,7 +446,19 @@ h3 {
     padding-bottom: 0;
     border-bottom: none;
   }
-  .tab-buttons { flex-wrap: wrap;}
+
+  .tab-buttons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tab-images {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* .tab-buttons { flex-wrap: wrap;} */
+  .tab-image { flex-basis: 50%; }
   .footer-main { flex-direction: column; }
   h3 { text-align: center;}
   .footer-main p {padding-bottom: 5px;}
@@ -434,14 +483,13 @@ h3 {
     width: 100%;
     height: 100%;
     margin: 0;
-    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
   }
 }  
 
-@media only screen and (max-width: 480px) {
-  .wrapper { width: 90%; }
-  .tab-buttons { flex-wrap: wrap; }
-}  
+@media only screen and (max-width: 995px) {
+  .tab-image { flex-basis: 50%;}
+}
