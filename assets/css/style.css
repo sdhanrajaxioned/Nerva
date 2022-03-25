@@ -204,11 +204,13 @@ h3 {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .footer-main {
   border-bottom: 1px solid #282828;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -219,17 +221,22 @@ h3 {
   line-height: 16px;
 }
 
-.recent-posts p {
+.recent li a{
   padding-bottom: 5px;
   border-bottom: 1px solid #282828;
+  display: block;
+  color: #555;
+  font-size: 11px;
+  line-height: 16px;
 }
 
-.recent-posts p:nth-child(n+3) { padding-top: 5px; }
-
-.recent-posts p:last-child { 
-  padding-bottom: 17px;
-  border-bottom: none; 
+.recent {
+  display: flex;
+  flex-direction: column;
 }
+
+.recent li:last-child a { border-bottom: none;}
+.recent li a:hover { color: #8FD0A6; }
 
 .popular-tags li a {
   padding: 8px 10px;
@@ -239,16 +246,28 @@ h3 {
   font-size: 11px;
 }
 
-.popular-tags li a.coding { 
-  margin-right: 50px;
-  background-color: #C1C1C1;
+.popular-tags li a:hover {
+  background-color: #FFF;
+  color: #8FD0A6;
+  transition: .3s ease-in;
+}
+
+.popular-tags li a.coding { background-color: #C1C1C1; }
+
+.popular-tags li a.coding:hover {
+  background-color: #FFF;
+  color: #C1C1C1;
 }
 
 .flickr-gallery {
+  padding-bottom: 10px;
+  justify-content: end;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.flickr h3 { padding-left: 10%;}
 
 .text-widget,
 .recent-posts,
@@ -292,7 +311,7 @@ h3 {
 .xbox::after,
 .indeed::after,
 .facebook::after  {
-  padding: 5px;
+  padding: 10px;
   margin: 2px;
   border-radius: 50%;
   background-color: #FFF;
@@ -319,7 +338,7 @@ h3 {
 
 /*media query starts*/
 /*media query for 995px starts here*/
-@media only screen and (max-width: 1154px) {
+/* @media only screen and (max-width: 1154px) {
   .footer-main {
     flex-wrap: wrap;
     justify-content: center;
@@ -354,15 +373,31 @@ h3 {
     flex-wrap: wrap;
     margin-bottom: 10px;
   }
-} 
+}  */
 
 @media screen and (max-width:1024px) {
   .tab-image { flex-basis: 33%; }
+  .footer-main > div { flex-basis: 40%; }
+  .recent-posts { margin-left: 10%; }
 }
 
 @media only screen and (max-width: 995px) {
   nav { flex-basis: 55%;}
-}  
+  .footer-main > div { flex-basis: 100%; }
+  .recent-posts { 
+    margin-left: 0; 
+  }
+  
+  .recent { text-align: center; }
+  .flickr h3 { padding-left: 0;}
+
+  .footer-main {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .wrapper {width: 90%;}
