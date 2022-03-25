@@ -17,7 +17,7 @@ $(document).ready(function () {
             $('.tab-image[data-img-filter=' + value + ']').show('1000');
         }
 
-        $(this).addClass('active').siblings().removeClass('active').children().css("color", "#FFF");
+        $(this).addClass('active').siblings().removeClass('active');
     })
 })
 
